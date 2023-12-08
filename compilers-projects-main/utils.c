@@ -117,10 +117,17 @@ void mostraTabela (){
     for (int i = 0; i < 50; i++)
         printf("--");
     for (int i = 0; i < posTab; i++)
-        printf("\n%30s | %3d | %s",
+        printf("\n%30s | %3d | %d | %d | %d | (%s,%3d,%d,%d,%d)=> %s |",
             tabSimb[i].id,
             tabSimb[i].end,
-            // tabSimb[i].tam,
+            tabSimb[i].tip,
+            tabSimb[i].tam,
+            tabSimb[i].posição,
+            tabSimb[i].listaDeCampos->nome,
+            tabSimb[i].listaDeCampos->tip,
+            tabSimb[i].listaDeCampos->tamanho,
+            tabSimb[i].listaDeCampos->posicao,
+            tabSimb[i].listaDeCampos->deslocamento,
             nomeTipo[tabSimb[i].tip]);
     puts(" ");
 }
@@ -152,3 +159,52 @@ void testaTipo (int tipo1, int tipo2, int ret) {
     empilha(ret);
 }
 
+// typedef struct no *ptno;
+
+// struct no{
+// 	char info;
+// 	ptno prox;
+//     int tam;
+//     int pos;
+//     int des;
+    
+// };
+
+// ptno insere(ptno L,char info){
+
+// 	ptno p, new;
+// 	new = (ptno) malloc (sizeof(struct no));
+// 	new -> info = info;
+// 	new -> prox = NULL;
+// 	p=L;
+// 	while(p && p->prox){
+// 		p=p->prox;
+// 		if(p){
+// 			p->prox=new;
+// 		}else{
+// 			L = new;
+// 		}
+// 	}
+// 	return L;
+// }
+
+// ptno busca(ptno L, char info){
+// 	while(L && L->info!=info){
+// 		L=L->prox;
+// 	}
+// 	return L;
+// }
+
+// void mostra(ptno L){
+//     printf("[");
+//     while(L){
+//         if(L->prox){
+//             printf("%c", L->info);
+//         }else{
+//             printf("%c", L->info);
+        
+//         }
+//         L=L->prox;
+//     }
+//     printf("]\n");
+// }
